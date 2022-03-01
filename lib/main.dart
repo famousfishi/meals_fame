@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_fame/categories_meals_screen.dart';
 import 'package:meals_fame/categories_screen.dart';
 
 void main() {
@@ -23,6 +24,7 @@ class Main extends StatelessWidget {
           canvasColor: const Color.fromRGBO(255, 254, 229, 1)),
       home: const CategoriesScreen(),
       debugShowCheckedModeBanner: false,
+      routes: {'/category-meals': (context) => CategoriesMealsScreen()},
     );
   }
 }
