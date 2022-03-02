@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meals_fame/categories_meals_screen.dart';
+import 'package:meals_fame/screens/categories_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String title;
@@ -16,7 +16,7 @@ class CategoryItem extends StatelessWidget {
     //       categoryId: categoryId, categoryTitle: title);
     // }));
 
-    Navigator.of(context).pushNamed('/category-meals',
+    Navigator.of(context).pushNamed(CategoriesMealsScreen.routeName,
         arguments: {'id': categoryId, 'title': title});
   }
 
