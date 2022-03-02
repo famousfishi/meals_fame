@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:meals_fame/screens/categories_meals_screen.dart';
+import 'package:meals_fame/screens/meal_detail_screen.dart';
 
 import 'screens/categories_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const Main());
 }
 
@@ -28,7 +33,12 @@ class Main extends StatelessWidget {
       initialRoute: CategoriesScreen.routeName,
       routes: {
         CategoriesScreen.routeName: (context) => const CategoriesScreen(),
-        CategoriesMealsScreen.routeName: (context) => CategoriesMealsScreen()
+        CategoriesMealsScreen.routeName: (context) => CategoriesMealsScreen(),
+        MealDetailScreen.routeName: (context) => MealDetailScreen()
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+            builder: (context) => const CategoriesScreen());
       },
     );
   }
