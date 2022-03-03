@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meals_fame/screens/categories_screen.dart';
 import 'package:meals_fame/screens/favourites_screen.dart';
+import 'package:meals_fame/widgets/main_drawer.dart';
 
 // ignore: use_key_in_widget_constructors
 class TabsScreen extends StatefulWidget {
@@ -28,6 +29,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text(myWidgets[_selectedTabIndex]['title'] as String),
       ),
+      drawer: MainDrawer(),
       body: myWidgets[_selectedTabIndex]['page'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
         onTap: selectedTab,
